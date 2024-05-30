@@ -15,9 +15,9 @@ export function SelectCategory({ categories }: { categories: Category[] }) {
         // className="select-category"
         name="select-category"
         sx={{ backgroundColor: grey[400] }}
-        value={searchParams.get("category_id") || "0"}
+        value={searchParams.get('category_id') || '0'}
         onChange={(event) => {
-          const search = searchParams.get("search");
+          const search =  searchParams.get('search');
           const category_id = event.target.value as string;
           searchProducts(router, search, category_id);
         }}
