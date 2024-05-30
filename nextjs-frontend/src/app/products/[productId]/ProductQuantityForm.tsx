@@ -1,6 +1,11 @@
 "use client";
-
-import { Box, Button, Divider, Slider, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  Slider,
+  Typography,
+} from "@mui/material";
 import { Product } from "../../../models";
 import { useEffect, useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -9,6 +14,7 @@ import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import { Total } from "../../../components/Total";
+import { addToCartAction } from "../../../server-actions/cart.action";
 
 const schema = yup
   .object({
@@ -28,7 +34,9 @@ export function ProductQuantityForm(props: { product: Product }) {
     },
   });
 
-  const [total, setTotal] = useState(product.price * getValues()["quantity"]);
+  const [total, setTotal] = useState(
+    product.price * getValues()["quantity"]
+  );
 
   useEffect(() => {
     const subscription = watch((value, { name, type }) => {
@@ -40,7 +48,11 @@ export function ProductQuantityForm(props: { product: Product }) {
   }, [watch, product, getValues]);
 
   return (
-    <Box component="form" sx={{ p: 1 }}>
+    <Box
+      component="form"
+      sx={{ p: 1 }}
+      action={addToCartAction}
+    >
       <Box
         sx={{
           display: "flex",
