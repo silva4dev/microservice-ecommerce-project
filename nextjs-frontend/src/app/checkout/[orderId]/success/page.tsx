@@ -11,43 +11,16 @@ import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import CheckIcon from "@mui/icons-material/Check";
 import { Order, OrderStatus } from "../../../../models";
 import { Total } from "../../../../components/Total";
+import { OrderServiceFactory } from "../../../../services/order.service";
 
-const order: Order = {
-  id: "1",
-  status: OrderStatus.PENDING,
-  created_at: new Date().toString(),
-  items: [
-    {
-      id: 1,
-      product: {
-        id: "1",
-        name: "Camisa",
-        description: "Camisa Branca",
-        price: 100,
-        image_url: "https://source.unsplash.com/random?product",
-        category_id: "1",
-      },
-      quantity: 2,
-      price: 200,
-    },
-    {
-      id: 2,
-      product: {
-        id: "2",
-        name: "Calça",
-        description: "Calça jeans",
-        price: 50,
-        image_url: "https://source.unsplash.com/random?product",
-        category_id: "2",
-      },
-      quantity: 1,
-      price: 50,
-    },
-  ],
-  total: 450,
-};
-
-async function CheckoutSuccessPage() {
+async function CheckoutSuccessPage({
+  params,
+}: {
+  params: { orderId: string };
+}) {
+  const orderService = OrderServiceFactory.create();
+  const order = await orderService.getOrder(params.orderId);
+  console.log(order);
   return (
     <Box>
       <Grid2 container spacing={2}>
