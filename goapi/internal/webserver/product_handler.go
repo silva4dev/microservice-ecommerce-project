@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
-	"github.com/silva4dev/ms-ecommerce-project/internal/entity"
-	"github.com/silva4dev/ms-ecommerce-project/internal/service"
+	"github.com/silva4dev/microservice-ecommerce-project/internal/entity"
+	"github.com/silva4dev/microservice-ecommerce-project/internal/service"
 )
 
 type WebProductHandler struct {

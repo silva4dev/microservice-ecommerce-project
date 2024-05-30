@@ -8,9 +8,9 @@ import (
 	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/chi/v5"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/silva4dev/ms-ecommerce-project/internal/database"
-	"github.com/silva4dev/ms-ecommerce-project/internal/service"
-	"github.com/silva4dev/ms-ecommerce-project/internal/webserver"
+	"github.com/silva4dev/microservice-ecommerce-project/internal/database"
+	"github.com/silva4dev/microservice-ecommerce-project/internal/service"
+	"github.com/silva4dev/microservice-ecommerce-project/internal/webserver"
 )
 
 func main() {

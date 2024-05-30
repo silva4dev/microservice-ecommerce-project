@@ -1,4 +1,4 @@
-module github.com/silva4dev/ms-ecommerce-project
+module github.com/silva4dev/microservice-ecommerce-project
 
 go 1.18
 

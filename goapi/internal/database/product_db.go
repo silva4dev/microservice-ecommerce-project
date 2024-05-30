@@ -3,7 +3,7 @@ package database
 import (
 	"database/sql"
 
-	"github.com/silva4dev/ms-ecommerce-project/internal/entity"
+	"github.com/silva4dev/microservice-ecommerce-project/internal/entity"
 )
 
 type ProductDB struct {
